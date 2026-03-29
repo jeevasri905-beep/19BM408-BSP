@@ -3,6 +3,7 @@
 To generate and plot standard discrete-time signals using MATLAB.
 # APPARATUS REQUIRED:
 •	Computer / Laptop
+
 •	MATLAB software
 # THEORY:
 Discrete-time signals are signals defined only at integer values of time (n).
@@ -44,9 +45,70 @@ x(n)=a^n sin⁡(ωn)
 6.	Stop the program
 
 # MATLAB CODE:
+```
+% GENERATION OF STANDARD DISCRETE-TIME SIGNALS
 
+clc;
+clear;
+close all;
 
+%% Sample index
+n = -10:10;
+
+%% 1. Unit Impulse Signal
+x1 = (n == 0);
+figure;
+stem(n, x1, 'filled');
+title('Unit Impulse Signal');
+xlabel('n'); ylabel('Amplitude');
+grid on;
+
+%% 2. Unit Step Signal
+x2 = (n >= 0);
+figure;
+stem(n, x2, 'filled');
+title('Unit Step Signal');
+xlabel('n'); ylabel('Amplitude');
+grid on;
+
+%% 3. Ramp Signal
+n1 = 0:10;
+x3 = n1;
+figure;
+stem(n1, x3, 'filled');
+title('Ramp Signal');
+xlabel('n'); ylabel('Amplitude');
+grid on;
+
+%% 4. Exponential Signal
+a = 0.8;
+x4 = a.^n1;
+figure;
+stem(n1, x4, 'filled');
+title('Exponential Signal');
+xlabel('n'); ylabel('Amplitude');
+grid on;
+
+%% 5. Sinusoidal Signal
+x5 = sin(0.3*pi*n1);
+figure;
+stem(n1, x5, 'filled');
+title('Sinusoidal Signal');
+xlabel('n'); ylabel('Amplitude');
+grid on;
+
+%% 6. Damped Sinusoidal Signal
+x6 = (0.9.^n1).*sin(0.4*pi*n1);
+figure;
+stem(n1, x6, 'filled');
+title('Damped Sinusoidal Signal');
+xlabel('n'); ylabel('Amplitude');
+grid on;
+```
 # OUTPUT GRAPH:
+<img width="650" height="705" alt="image" src="https://github.com/user-attachments/assets/4d9b0452-af65-455b-ad7f-20ca35e5600a" />
+<img width="661" height="721" alt="image" src="https://github.com/user-attachments/assets/bc46e8ac-b8e4-41f5-9d52-a7a6728e4299" />
+<img width="631" height="708" alt="image" src="https://github.com/user-attachments/assets/0ec74ae8-a7d2-4683-b2e6-0b7075608db4" />
 
 # Result :
 Thus, standard discrete-time signals were successfully generated and plotted using MATLAB.
