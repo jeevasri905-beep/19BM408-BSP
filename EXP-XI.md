@@ -19,16 +19,40 @@ Using FFT, the computational complexity is reduced from NÂ² operations to N logâ
 Spectral analysis helps in identifying EEG rhythms such as alpha and beta waves, which are important in neurological studies, sleep analysis, and brain-computer interface systems.
 
 # ALGORITHM :
-1)Load EEG signal data.
-2)Define the sampling frequency.
-3)Apply FFT to convert the signal to the frequency domain.    
-4)Compute magnitude spectrum.
+1. Load EEG signal data.
+
+2. Define the sampling frequency.
+
+3. Apply FFT to convert the signal to the frequency domain.    
+
+4. Compute magnitude spectrum.
+
 5) Plot the power spectrum.
+
 6) Identify dominant frequency components.
 
 # MATLAB CODE :
+```
+clc;
+clear;
+close all;
 
+load eegdata.mat
+
+fs = 256;
+N = length(eeg);
+
+X = fft(eeg);
+f = (0:N-1)*(fs/N);
+
+plot(f,abs(X));
+xlabel('Frequency (Hz)');
+ylabel('Magnitude');
+title('EEG Frequency Spectrum');
+grid on;
+```
 # OUTPUT GRAPH :
+<img width="1252" height="822" alt="image" src="https://github.com/user-attachments/assets/d0bc7fbb-1f3b-4d9e-b8a6-a4aa4e282856" />
 
 # RESULT :
 The EEG signal spectrum was successfully obtained using FFT and frequency components were analyzed.
